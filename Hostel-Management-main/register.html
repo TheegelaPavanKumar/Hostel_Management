@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+
+{% block content %}
+ 
+
+ {% with messages = get_flashed_messages() %}
+  {% if messages %}
+     
+    <script type="text/javascript">
+      var m={{ messages|safe }};
+      for(var i=0;i<m.length;i++)
+      {
+        alert(m[i]);
+      }
+    </script>
+    
+
+
+  {% endif %}
+{% endwith %}
+
+
+
+         
+      <h1>&nbsp &nbsp Register Page</h1>
+      <br>
+<form class="form-horizontal" action="{{url_for('register')}}" method="POST">
+
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="email">Rollno:</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="rollno" name="rollno" placeholder="Enter Rollno">
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="pwd">Name:</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name">
+    </div>
+  </div>
+
+
+    <div class="form-group">
+    <label class="control-label col-sm-2" for="pwd">Email:</label>
+    <div class="col-sm-6">
+      <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email">
+    </div>
+  </div>
+
+
+      <div class="form-group">
+    <label class="control-label col-sm-2" for="pwd">Phno:</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="phno" name="phno" placeholder="Enter Phno">
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="pwd">Course:</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="course" name="course" placeholder="Enter course">
+    </div>
+  </div>
+
+
+    <div class="form-group">
+    <label class="control-label col-sm-2" for="pwd">Room Number:</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="room" name="room" placeholder="Enter Room Number">
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="pwd">Fee:</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="fee" name="fee" placeholder="Enter Fee">
+    </div>
+  </div>
+
+
+  
+   <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-default">Submit</button>
+    </div>
+  </div>
+</form>
+
+{% endblock %}

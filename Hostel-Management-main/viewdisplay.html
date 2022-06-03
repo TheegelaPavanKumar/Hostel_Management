@@ -1,0 +1,53 @@
+
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+
+<body>
+ 
+<div class="container">
+  <h2>View Details</h2>
+  <div class="panel-group">
+    <div class="panel panel-default">
+      <div class="panel-heading">Student details</div>
+      <div class="panel-body">View student details
+         <div class="btn-group  pull-right">
+           <a href="{{url_for('view')}}" class="btn btn-default btn-sm">view</a>
+    </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">Student outing details</div>
+      <div class="panel-body">View outing details
+        <div class="btn-group  pull-right">
+           <a href="{{url_for('viewouting')}}" class="btn btn-default btn-sm">view</a>
+    </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">Student medical usage</div>
+      <div class="panel-body">View medical details
+        <div class="btn-group  pull-right">
+           <a href="{{url_for('viewmedical')}}" class="btn btn-default btn-sm">view</a>
+    </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">Student courier details</div>
+      <div class="panel-body">View courier details
+        <div class="btn-group  pull-right">
+           <a href="{{url_for('viewcourier')}}" class="btn btn-default btn-sm">view</a>
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+
+
+
+{% endblock %}

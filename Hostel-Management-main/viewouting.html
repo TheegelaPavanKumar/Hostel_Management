@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+     
+    <script type="text/javascript">
+      var m={{ messages|safe }};
+      for(var i=0;i<m.length;i++)
+      {
+        alert(m[i]);
+      }
+    </script>
+    
+
+
+  {% endif %}
+{% endwith %}
+
+
+
+
+
+
+
+
+<table id="example" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Sno</th>
+                <th>outpassid</th>
+                <th>Roll num</th>
+                <th>Name</th>
+                <th>Check out date</th>
+                <th>Check in date</th>
+                <th>Check out time</th>
+                <th>Check in time</th>
+                <th>Place</th>
+                <th></th>
+
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for d in data %}
+            <tr>
+                <td>{{loop.index}}</td>
+                <td>{{d[0]}}</td>
+                <td>{{d[1]}}</td>
+                <td>{{d[2]}}</td>
+                <td>{{d[3]}}</td>
+                <td>{{d[4]}}</td>
+                <td>{{d[5]}}</td>
+                <td>{{d[6]}}</td>
+                <td>{{d[7]}}</td>
+            
+
+                <td>
+                  <form action="{{url_for('deleteouting')}}" method="POST">
+                  <button value={{d[0]}} name="delete">Delete</button>
+                  </form>
+                </td>
+
+
+            </tr>
+            {% endfor %}
+
+        </tbody>
+</table>
+
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+    $('#example').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
+    } );
+} );
+</script>
+{% endblock %}

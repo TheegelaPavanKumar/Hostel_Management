@@ -1,0 +1,94 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+     
+    <script type="text/javascript">
+      var m={{ messages|safe }};
+      for(var i=0;i<m.length;i++)
+      {
+        alert(m[i]);
+      }
+    </script>
+    
+
+
+  {% endif %}
+{% endwith %}
+
+	       
+	    <h1>&nbsp &nbsp Outpass Page</h1>
+<form class="form-horizontal" action="{{url_for('outing')}}" method="POST">
+
+<br></br>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="email">Rollno:</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="rollno" name="rollno"placeholder="Enter Rollno">
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="pwd">Name:</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name">
+    </div>
+  </div>
+
+
+
+
+      <div class="form-group">
+    <label class="control-label col-sm-2" for="pwd">Check out date:</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="cod" name="cod" placeholder="Enter Check out date">
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="pwd">Check in date:</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="cid" name="cid" placeholder="Enter Check in date">
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="pwd">Check out time:</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="cot" name="cot" placeholder="Enter Check out time">
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="pwd">Check in time:</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="cit" name="cit" placeholder="Enter Check in time">
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="pwd">Place to visit:</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="place" name="place" placeholder="Enter Place">
+    </div>
+  </div>
+
+
+
+	
+	 <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-default">Submit</button>
+    </div>
+  </div>
+</form>
+
+{% endblock %}
